@@ -1,12 +1,20 @@
 # Books to Scrape
 
+Scrapes the first 100 books (pages 1–5) from [books.toscrape.com](https://books.toscrape.com) into a CSV, then answers three questions with SQL Server.
 
+| File | What it is |
+|---|---|
+| `scrape_script/scrape_books_bs4.py` | Scraper (requests + BeautifulSoup) |
+| `data/books.csv` | Output: `title, price, rating, in_stock, url` |
+| `sql_script/insert_books.sql` | Loads the CSV into a `Books` table |
+| `sql_script/queries.sql` | Queries for the three questions |
+| `tasks_result/` | Screenshots of the query results |
 
 ## Run
 
 ```
 pip install requests beautifulsoup4
-python scrape_books.py
+python scrape_script/scrape_books_bs4.py
 ```
 
 ## Here's the answer
